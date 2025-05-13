@@ -1,103 +1,80 @@
-import Image from "next/image";
+import React from 'react';
+import HeroSwiper from '@/components/HeroSwiper';
+import ProductGrid from '@/components/ProductGrid';
+import { products } from '@/data/products';
 
 export default function Home() {
+  // Get a sample of featured products
+  const featuredProducts = products.slice(0, 6);
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <HeroSwiper />
+      
+      <section className="py-5">
+        <div className="container">
+          <div className="row mb-4">
+            <div className="col-12 text-center">
+              <h2 className="display-5">Our Popular Dishes</h2>
+              <p className="lead text-muted">Discover our most loved food items</p>
+              <div className="d-flex justify-content-center">
+                <div className="border-bottom border-primary border-3 my-3" style={{ width: '50px' }}></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        <ProductGrid products={featuredProducts} />
+      </section>
+      
+      <section className="py-5 bg-light">
+        <div className="container py-4">
+          <div className="row justify-content-center">
+            <div className="col-md-8 text-center">
+              <h2 className="display-5 mb-4">Why Choose Us?</h2>
+              <p className="lead">We're dedicated to providing you with the best food experience</p>
+            </div>
+          </div>
+          
+          <div className="row mt-5 g-4">
+            <div className="col-md-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body text-center p-4">
+                  <div className="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-4" style={{ width: '70px', height: '70px' }}>
+                    <i className="fs-3">🍲</i>
+                  </div>
+                  <h4>Quality Food</h4>
+                  <p className="text-muted">We use only the freshest ingredients to prepare our delicious meals.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="col-md-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body text-center p-4">
+                  <div className="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-4" style={{ width: '70px', height: '70px' }}>
+                    <i className="fs-3">🚚</i>
+                  </div>
+                  <h4>Fast Delivery</h4>
+                  <p className="text-muted">Quick and reliable delivery right to your doorstep.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="col-md-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body text-center p-4">
+                  <div className="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-4" style={{ width: '70px', height: '70px' }}>
+                    <i className="fs-3">🔒</i>
+                  </div>
+                  <h4>Secure Ordering</h4>
+                  <p className="text-muted">Safe and secure payment options for your convenience.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
