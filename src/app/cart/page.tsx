@@ -13,11 +13,6 @@ export default function CartPage() {
   const tax = totalPrice * 0.1; // 10% tax
   const orderTotal = totalPrice + shippingFee + tax;
   
-  const handleCheckout = () => {
-    alert('Checkout functionality would be implemented here!');
-    clearCart();
-  };
-  
   if (cart.length === 0) {
     return (
       <div className="container py-5 text-center">
@@ -90,12 +85,12 @@ export default function CartPage() {
                 <span>${orderTotal.toFixed(2)}</span>
               </div>
               
-              <button 
+              <Link 
+                href="/checkout" 
                 className="btn btn-primary w-100 py-3"
-                onClick={handleCheckout}
               >
                 Proceed to Checkout
-              </button>
+              </Link>
               
               <div className="mt-3 text-center">
                 <small className="text-muted">

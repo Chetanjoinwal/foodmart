@@ -1,6 +1,11 @@
+'use client';
+
 import React from 'react';
 import HeroSwiper from '@/components/HeroSwiper';
 import ProductGrid from '@/components/ProductGrid';
+import ComboOfferPopup from '@/components/ComboOfferPopup';
+import OfferBanner from '@/components/OfferBanner';
+import ComboOfferSection from '@/components/ComboOfferSection';
 import { products } from '@/data/products';
 
 export default function Home() {
@@ -9,6 +14,7 @@ export default function Home() {
   
   return (
     <div>
+      <OfferBanner />
       <HeroSwiper />
       
       <section className="py-5">
@@ -27,7 +33,10 @@ export default function Home() {
         <ProductGrid products={featuredProducts} />
       </section>
       
-      <section className="py-5 bg-light">
+      {/* Combo Offers Section */}
+      <ComboOfferSection />
+      
+      <section className="py-5 bg-white">
         <div className="container py-4">
           <div className="row justify-content-center">
             <div className="col-md-8 text-center">
@@ -75,6 +84,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Combo Offer Popup */}
+      <ComboOfferPopup />
     </div>
   );
 }

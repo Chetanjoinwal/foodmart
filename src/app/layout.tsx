@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { CartProvider } from '@/context/CartContext'
+import { PaymentProvider } from '@/context/PaymentContext'
 import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,11 +22,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <CartProvider>
-          <Navbar />
-          <main className="min-vh-100">
-            {children}
-          </main>
-          <Footer />
+          <PaymentProvider>
+            <Navbar />
+            <main className="min-vh-100">
+              {children}
+            </main>
+            <Footer />
+          </PaymentProvider>
         </CartProvider>
         <Script 
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
