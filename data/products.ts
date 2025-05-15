@@ -67,9 +67,9 @@ export const products: Product[] = [
   },
   {
     id: 9,
-    name: 'Beef Burrito',
+    name: 'Beef bs',
     price: 9.49,
-    image: '/images/burrito.jpg',
+    image: '/images/bs.jpg',
     description: 'Large flour tortilla filled with seasoned ground beef, rice, beans, cheese, lettuce, and sour cream.',
     category: 'mexican'
   },

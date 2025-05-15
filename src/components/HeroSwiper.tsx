@@ -15,7 +15,7 @@ const slides = [
     id: 1,
     title: 'Delicious Food Delivered to Your Door',
     description: 'Discover a wide range of tasty meals prepared by expert chefs using the freshest ingredients.',
-    image: '/images/slide1.jpg',
+    image: '/images/slide1.webp',
     btnText: 'Browse Menu',
     btnLink: '/products',
   },
@@ -31,7 +31,7 @@ const slides = [
     id: 3,
     title: 'Special Offers and Discounts',
     description: 'Enjoy special discounts and offers on our wide range of delicious food items.',
-    image: '/images/slide3.jpg',
+    image: '/images/slide3.png',
     btnText: 'See Offers',
     btnLink: '/products',
   }

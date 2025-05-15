@@ -27,7 +27,7 @@ const SAMPLE_COMBO: Combo = {
   description: "Perfect for the whole family! Get 2 pizzas, 4 sides, and 2 desserts at an amazing price.",
   originalPrice: 79.99,
   offerPrice: 59.99,
-  image: "/images/combo-offer.jpg",
+  image: "/images/ftimg (2).jpg",
   items: [
     { id: 101, name: "Pepperoni Pizza", price: 19.99, image: "/images/pizza1.jpg" },
     { id: 102, name: "Veggie Supreme Pizza", price: 18.99, image: "/images/pizza2.jpg" },
